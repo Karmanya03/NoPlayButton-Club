@@ -1887,40 +1887,49 @@ a {
   margin: 1rem 3rem;
 }
 
-.profile__card__header {
-  background: rgb(15, 157, 88);
-  background: linear-gradient(
-    215deg,
-    rgba(15, 157, 88, 0.6755077030812324) 36%,
-    rgba(66, 133, 244, 0.6783088235294117) 79%
-  );
+
+.profile__card__header,
+.secondary,
+.accent,
+.accent--two {
   width: 100%;
   height: 150px;
+  position: relative;
+  overflow: hidden;
 }
-.secondary {
-  background: rgb(15, 157, 88);
+
+.profile__card__header::before,
+.secondary::before,
+.accent::before,
+.accent--two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
   background: linear-gradient(
-    18deg,
-    rgba(15, 157, 88, 0.6755077030812324) 36%,
-    rgba(66, 133, 244, 0.6783088235294117) 79%
+    215deg,
+    rgba(21, 195, 2, 0.676) 36%,
+    rgba(66, 133, 244, 0.6783088235294117) 58%
   );
+  animation: gradientWave 10s linear infinite;
 }
-.accent {
-  background: rgb(15, 157, 88);
-  background: linear-gradient(
-    290deg,
-    rgba(15, 157, 88, 0.6755077030812324) 36%,
-    rgba(66, 133, 244, 0.6783088235294117) 79%
-  );
+
+@keyframes gradientWave {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.accent--two {
-  background: rgb(15, 157, 88);
-  background: linear-gradient(
-    169deg,
-    rgba(15, 157, 88, 0.6755077030812324) 36%,
-    rgba(66, 133, 244, 0.6783088235294117) 79%
-  );
-}
+
+/* Repeat the above styles for .secondary, .accent, and .accent--two if needed */
+
+
+
+
 .profile__card__body {
   width: 100%;
   background-color: whitesmoke;
