@@ -1569,7 +1569,7 @@ a {
 }
 
 .profile__container {
-    flex-basis: calc(33.333% - 40px); /* sets the base width for each card taking into account the gap */
+  flex-basis: calc(33.333% - 20px); /* sets the base width for each card taking into account the gap */
     box-sizing: border-box; /* includes padding and border in the element's total width and height */
 }
 
@@ -1586,9 +1586,9 @@ a {
 
 /* Adjust the width as needed to fit your layout */
 @media (max-width: 768px) {
-    .profile__container {
-        flex-basis: calc(50% - 40px); /* for medium screens, we show 2 cards per row */
-    }
+  .profile__container {
+    flex-basis: calc(50% - 20px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1602,13 +1602,13 @@ a {
 }
 
 .profile__image__containerB {
-  margin-top: -50px; /* Adjusts the profile image container to be halfway up */
+  margin-top: -30px;/* Adjusts the profile image container to be halfway up */
   text-align: center;
 }
 
 .profile__card__imageB {
-  width: 100px; /* Profile image size */
-  height: 100px;
+  width: 80px; /* Adjusted profile image size */
+  height: 80px;
   border-radius: 50%; /* Makes the image round */
   border: 5px solid #FFFFFF; /* White border around the image */
   display: inline-block;
@@ -1641,9 +1641,14 @@ a {
   box-shadow: 0 0 1px 0.5px #f3f3f3;
   border-radius: 10px;
 }
+@media screen and (min-width: 768px) {
+  .card {
+    width: 30vw;
+  }
+}
 .card__content {
   padding: 1rem;
-  margin: 2rem;
+  margin: 1rem;
 }
 .card__heading {
   color: var(--color-headings);
