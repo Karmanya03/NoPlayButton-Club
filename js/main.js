@@ -1,10 +1,10 @@
-/*Navbar Open/Close toggle button* */
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach((item) =>
-  item.addEventListener("click", function () {
-    this.classList.toggle("collapsible--expanded");
-  })
-);
+/*Navbar Open/Close toggle button */
+const hamburgerCheckbox = document.getElementById("hamburgerCheckbox");
+const navElement = document.querySelector('.nav');
+
+hamburgerCheckbox.addEventListener("change", function () {
+  navElement.classList.toggle("collapsible--expanded", this.checked);
+});
 
 /*Navbar Sticky*/
 window.onscroll = function () {
@@ -44,6 +44,7 @@ const btnSecondaryAll = document.querySelectorAll(".button--secondary");
 const btnAccentTwoAll = document.querySelectorAll(".button--accent--two");
 const credits = document.querySelector('.credits');
 const text1 = document.querySelector('.text1');
+
 
 checkbox.addEventListener("change", () => {
   toggleTheme();
@@ -123,7 +124,7 @@ function toggleTheme() {
     root.style.setProperty('--bb8-bg', '#fff');
     root.style.setProperty('--accent', '#de7d2f');
     credits.classList.remove('text-light');
-    text1.classList.add('text-light');
+    text1.classList.remove('text-light');
   }
 }
 

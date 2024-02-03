@@ -200,6 +200,7 @@ a {
 
 /* Blocks */
 .team {
+  padding-top:15px;
   display: flex;
   flex-direction: column;
   align-items: center; /* This will center the child elements */
@@ -213,7 +214,7 @@ a {
 
 .block__heading {
   color: var(--color-headings);
-  margin-top: 0;
+  margin-top: 10px;
 }
 .block__body {
   display: flex;
@@ -275,7 +276,7 @@ a {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
   .block__image {
     width: 35%;
     margin: 1rem 7rem 2rem 4rem;
@@ -319,14 +320,6 @@ a {
   }
 }
 
-/*Navbar*/
-.nav__brand {
-  width: 100%;
-  height: 100%;
-}
-.nav__brand__container {
-  max-width: 200px;
-}
 
 
 /*==============================*/
@@ -1277,6 +1270,14 @@ a {
 
 /*==============================*/
 
+/*Navbar*/
+.nav__brand {
+  width: 100%;
+  height: 100%;
+}
+.nav__brand__container {
+  max-width: 200px;
+}
 
 .nav {
   display: flex;
@@ -1308,7 +1309,13 @@ a {
   color: var(--color-primary);
 }
 
-.nav.collapsible--expanded .nav__toggler {
+.nav__toggler {
+  font-size: 24px; /* Adjust the font size as needed */
+  /* or */
+  width: 24px; /* Adjust the width as needed */
+  height: 24px; /* Adjust the height as needed */
+}
+.nav.collapsible--expanded {
   opacity: 1;
   box-shadow: 0 0 0 3px var(--color-primary);
   border-radius: 5px;
@@ -1521,6 +1528,7 @@ a {
 /*Banner*/
 
 .banner {
+  padding-top: 15px;
   padding: 6rem 0;
   margin: 0 1rem;
   text-align: center;
@@ -1536,6 +1544,7 @@ a {
   color: white;
 }
 .yellow--banner {
+  padding-top: 15px;
   background: rgba(0, 0, 0, 0.7) url(../images/yellow-banner.png);
   color: var(--color-headings);
 }
@@ -1871,63 +1880,7 @@ a {
 }*/
 
 
-/*OLD Profile Card*/
-.profile__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
-}
-
-.profile__card {
-  width: 75%;
-  border-radius: 15px;
-  overflow: hidden;
-  max-width: 400px;
-  margin: 1rem 3rem;
-}
-
-
-.profile__card__header,
-.secondary,
-.accent,
-.accent--two {
-  width: 100%;
-  height: 150px;
-  position: relative;
-  overflow: hidden;
-}
-
-.profile__card__header::before,
-.secondary::before,
-.accent::before,
-.accent--two::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    215deg,
-    rgba(21, 195, 2, 0.676) 36%,
-    rgba(66, 133, 244, 0.6783088235294117) 58%
-  );
-  animation: gradientWave 10s linear infinite;
-}
-
-@keyframes gradientWave {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* Repeat the above styles for .secondary, .accent, and .accent--two if needed */
-
-
 
 
 .profile__card__body {
@@ -1942,19 +1895,28 @@ a {
 .profile__card__image {
   border-radius: 50%;
   border: 3px solid white;
-  transform: translateY(-80px);
-  width: 45%;
-  max-width: 400px;
+  width: 80%; /* Adjusted width to fill the container */
+  max-width: 400px; /* Set a maximum width to control size */
+  height: auto; /* Allow the height to adjust proportionally */
+  display: block; /* Ensure it behaves as a block-level element */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 .profile__image__container {
-  max-height: 70px;
-  text-align: center;
+  width: 100%; /* Set the width to 100% for mobile devices */
+  text-align: center; /* Center the image horizontally */
+  margin-top: 50px; /* Adjust the top margin as needed */
+
+  /* Additional styling for larger screens (optional) */
+  @media screen and (max-width: 374px) {
+    width: 280px; /* Set the width to 280px for screens wider than 767px */
+  }
 }
+
 .card__person-name {
   text-align: center;
   font-size: 2.5rem;
-  padding: 0 4rem 0.5rem 4rem;
+padding-top: 0%;
 }
 .card__person-name_long {
   padding: 1rem 4rem;
@@ -1965,7 +1927,7 @@ a {
   border-top: 2px solid lightgray;
   width: 100%;
   justify-content: center;
-  margin-top: auto;
+  margin-top: 0px;
 }
 
 .social__media__container {
@@ -1973,9 +1935,14 @@ a {
   margin: 1rem 2rem;
 }
 
+.social__icon__ni {
+  max-width: 100%; /* Ensure the icon doesn't exceed its container */
+}
+
 .social__media__icon {
   width: 100%;
-  max-width: 35px;
+  max-width: 100%;
+  overflow: hidden;
 }
 .social__media__icon:hover {
   filter: brightness(0) invert(0.5);
@@ -2025,7 +1992,7 @@ a {
   }
   .profile__card {
     width: 80%;
-    max-width: 400px;
+    max-width: 300px;
     margin: 1rem 0;
   }
   .profile__container {
@@ -2038,12 +2005,14 @@ a {
 /*Footer*/
 .footer {
   background-color: whitesmoke;
+  padding: 1rem; /* Adjust padding based on your design */
+  margin-top: auto; /* Push the footer to the bottom */
 }
 .footer__brand {
   width: 270px;
 }
 .credits {
-  font-size: 1.3rem;
+  font-size: 2rem;
   text-align: center;
   margin: 2rem;
 }
@@ -2087,16 +2056,18 @@ a {
     width: 230px;
   }
   .footer {
-    padding: 6rem 0 1rem 0;
+    padding: 4rem 0 4rem 0;
   }
   .footer__icon {
     width: 25px;
     height: 25px;
   }
   .footer--section {
-    margin: 0 auto;
+    margin-top: auto; /* Additional space may be coming from here */
+    margin-bottom: 0; /* Ensure no margin at the bottom */
   }
 }
+
 
 /*Dark Mode*/
 body {
@@ -2180,4 +2151,292 @@ body.dark {
 }
 .button--accent--two-dark {
   background: #b58500;
+}
+
+
+
+
+
+
+/*=========NEW Profile Cards=========*/
+/* A-Team Container for the cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.w-card {
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(-45deg, #ffce08, #e5b906, #d79402, #dcb402);
+  animation: gradient 5s ease infinite;
+  background-size: 500% 500%;
+  width: 100%; /* Use percentage for responsiveness */
+  max-width: 300px; /* Set a max-width for larger screens */
+  height: auto; /* Auto-adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+/* B-Team Container for the cards */
+
+.b-card {
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(-45deg, #017ffe, #1f4cfe, #2e4779, #008fd2);
+  animation: gradient 5s ease infinite;
+  background-size: 500% 500%;
+  width: 100%; /* Use percentage for responsiveness */
+  max-width: 300px; /* Set a max-width for larger screens */
+  height: auto; /* Auto-adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+/* --------------/B-Team Container for the cards--------------- */
+
+/* she-Team Container for the cards */
+
+.she-card {
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(-45deg, #f03aab, #bd4091, #e03b72, #d81d8d);
+  animation: gradient 5s ease infinite;
+  background-size: 500% 500%;
+  width: 100%; /* Use percentage for responsiveness */
+  max-width: 300px; /* Set a max-width for larger screens */
+  height: auto; /* Auto-adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+/* --------------/she-Team Container for the cards--------------- */
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+    box-shadow: 0px 0px 2px #ffffff,
+      0px 0px 5px #ffffff,
+      0px 0px 10px #6eecd2,
+      0px 0px 50px #6eecd2;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0px 0px 2px #ffffff,
+      0px 0px 5px #ffffff,
+      0px 0px 10px #b260ff,
+      0px 0px 50px #b260ff;
+  }
+
+  100% {
+    background-position: 0 50%;
+    box-shadow: 0px 0px 2px #ffffff,
+          0px 0px 5px #ffffff,
+          0px 0px 10px #fffb01,
+          0px 0px 50px #fffb01;
+  }
+}
+
+.heading {
+  color: white;
+  font-weight: 500;
+  font-size: 1.2em; /* Adjust font size for better readability */
+  text-align: center;
+  gap: 5px;
+}
+
+.heading span {
+  font-size: 1.5em; /* Adjust font size for better readability */
+  font-weight: 800;
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+@media screen and (max-width: 768px) {
+  .heading span {
+    font-size: 1.8em; /* Adjust the font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading span {
+    font-size: 1.2em; /* Adjust the font size for even smaller screens */
+  }
+}
+
+@keyframes flickering {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  41.99% {
+    opacity: 1;
+  }
+
+  42% {
+    opacity: 0;
+  }
+
+  43% {
+    opacity: 0;
+  }
+
+  43.01% {
+    opacity: 1;
+  }
+
+  47.99% {
+    opacity: 1;
+  }
+
+  48% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  49.01% {
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  gap: 10px;
+}
+
+.item {
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: default;
+}
+
+.item svg {
+  margin-top:20px;
+  transition-duration: 0.3s;
+}
+
+.item:hover svg {
+  filter: drop-shadow(0px 0px 14px rgb(255, 255, 255));
+  transition-duration: 0.3s;
+}
+
+button {
+  width: 100%;
+  max-width: 200px; /* Set a max-width for larger screens */
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 100px white;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  letter-spacing: 1.5px;
+  transition-duration: 0.3s;
+}
+
+.w-card:before {
+  content: "";
+  position: absolute;
+  font-size: 4em;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -14.2%;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.445));
+}
+
+.Arole {
+  padding-top: 20px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 19px;
+  height: 50px;
+  padding-bottom: 30px;
+}
+
+.Aname {
+  margin: 0px;
+  padding-bottom: 60px;
+  font-weight: 800;
+  height: 30px;
+}
+
+
+/*============Hamburger================*/
+.hamburger {
+  cursor: pointer;
+  display:none;
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block; /* Show the hamburger button on mobile */
+  }
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(115, 115, 115);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
 }
